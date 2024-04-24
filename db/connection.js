@@ -6,7 +6,7 @@ import { logger } from '../config/logger.js'
 const connectDB = async () => {
     try {
         console.log(`${dialect}://${host}:${dbPort}/${dbName}`);
-        const conn = await mongoose.connect("mongodb://127.0.0.1:27017/melisync").then(async () => {
+        const conn = await mongoose.connect("mongodb+srv://emmarubado:5l2gCiidUU1WPyWT@cluster0.9zb5tyi.mongodb.net/").then(async () => {
             if(isDev() || isTest()){
             }
         });
