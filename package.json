@@ -1,0 +1,45 @@
+{
+    "name": "publicar",
+    "version": "1.0.0",
+    "description": "RESTful API para publiCAR, corresponde al Modulo de integracion ML.",
+    "main": "server.js",
+    "type": "module",
+    "repository": "publiCAR",
+    "author": "Javier Toso <jhtoso95@gmail.com>",
+    "license": "MIT",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon --legacy-watch server.js",
+        "test": "jest -i --colors --verbose --detectOpenHandles"
+    },
+    "keywords": [
+        "node",
+        "node.js",
+        "express",
+        "rest",
+        "api",
+        "es6",
+        "docker"
+    ],
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.17.1",
+        "http-status": "^1.7.3",
+        "moment": "^2.24.0",
+        "mongoose": "^8.0.0",
+        "morgan": "^1.10.0",
+        "swagger-jsdoc": "^6.0.8",
+        "swagger-ui-express": "^4.1.6",
+        "uuid": "^9.0.1",
+        "winston": "^3.2.1"
+    },
+    "devDependencies": {
+        "faker": "^5.1.0",
+        "jest": "^26.0.1",
+        "nodemon": "^2.0.0"
+    }
+}
