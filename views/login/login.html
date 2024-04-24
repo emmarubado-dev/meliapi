@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Publicar.Shop</title>
+    <style>
+        /* Vanilla CSS converted from SCSS with hardcoded values */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll; 
+}
+
+body {
+  background: #bf9039; /* Updated background color directly */
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #080808; /* Updated text color directly */
+  transition: .5s ease;
+}
+
+a:hover {
+  color: #e6a00f; /* Darken main color directly */
+}
+
+.form {
+  background: rgba(216, 216, 216, .9); /* Updated form background color directly */
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px; /* Updated border-radius directly */
+  box-shadow: 0 4px 10px 4px rgba(216, 216, 216, .3); /* Shadow with updated color */
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(255, 234, 182, .25); /* Updated form inputs background color for inactive tab directly */
+  color: #080808; /* Updated text color directly */
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.tab-group li a:hover {
+  background: #e6a00f; /* Darken main color directly */
+}
+
+.tab-group .active a {
+  background: #ffbf23; /* Updated highlight color directly */
+  color: #080808; /* Updated text color directly */
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #080808; /* Updated text color directly */
+  font-weight: 300; /* Thin font-weight directly */
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(8, 8, 8, .5); /* Adjusted for text color directly */
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+
+label .req {
+  margin: 2px;
+  color: #ffbf23; /* Updated highlight color directly */
+}
+
+label.active {
+  transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #080808; /* Updated text color directly */
+}
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: white;
+  border: 1px solid #ffeab6; /* Updated form inputs border color directly */
+  color: #080808; /* Updated text color directly */
+  border-radius: 0;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #ffbf23; /* Updated highlight color directly */
+}
+
+textarea {
+  border: 2px solid #ffeab6; /* Updated form inputs border for textarea directly */
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.top-row > div:last-child { 
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600; /* Bold font-weight directly */
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #ffbf23; /* Updated highlight color directly */
+  color: #080808; /* Updated text color directly */
+  transition: all .5s ease;
+  -webkit-appearance: none;
+}
+
+.button:hover, .button:focus {
+  background: #e6a00f; /* Darken main color directly */
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="view.js"></script>
+</head>
+<body>
+    <div class="form">
+  
+        <ul class="tab-group">
+            <li class="tab active"><a href="#signup">Registrarse</a></li>
+            <li class="tab"><a href="#login">Iniciar Sesión</a></li>
+        </ul>
+        
+        <div class="tab-content">
+            <div id="signup">   
+                <h1>Regístrate en Publicar.Shop</h1>
+                
+                <form action="/" method="post">
+                
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            Nombre<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off" />
+                    </div>
+                
+                    <div class="field-wrap">
+                        <label>
+                            Apellido<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off"/>
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Dirección de Correo<span class="req">*</span>
+                    </label>
+                    <input type="email" required autocomplete="off"/>
+                </div>
+                
+                <!-- New Phone Number field -->
+                <div class="field-wrap">
+                    <label>
+                        Número de Teléfono<span class="req">*</span>
+                    </label>
+                    <input type="text" required autocomplete="off"/>
+                </div>
+                
+                <!-- New Store Name field -->
+                <div class="field-wrap">
+                    <label>
+                        Nombre de la Tienda<span class="req">*</span>
+                    </label>
+                    <input type="text" required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                        Establecer una Contraseña<span class="req">*</span>
+                    </label>
+                    <input type="password" required autocomplete="off"/>
+                </div>
+                
+                <button type="submit" class="button button-block"/>Comenzar</button>
+                
+                </form>
+
+            </div>
+            
+            <div id="login">   
+                <h1>¡Bienvenido de Nuevo a Publicar.shop!</h1>
+                
+                <form action="/" method="post">
+                
+                    <div class="field-wrap">
+                    <label>
+                        Dirección de Correo<span class="req">*</span>
+                    </label>
+                    <input type="email" required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                        Contraseña<span class="req">*</span>
+                    </label>
+                    <input type="password" required autocomplete="off"/>
+                </div>
+                
+                <p class="forgot"><a href="#">¿Olvidaste tu contraseña?</a></p>
+                
+                <button class="button button-block"/>Iniciar Sesión</button>
+                
+                </form>
+
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
